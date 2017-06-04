@@ -1,0 +1,53 @@
+{{#groups}}
+<div class="row">
+	<div class="col first nine">
+		<a name="{{id}}"></a>
+		<h2>{{name}}</h2>
+	</div>
+</div>
+
+{{#docs}}
+<div class="row" style="min-height: 500px;">
+	<div class="col first nine" style="min-height: 500px;">
+		<div class="doc">
+			<a name="{{id}}"></a>
+				<h3><span id="nameelement{{id}}">{{name}}</span>
+				{{#authenticated}}
+				<a href="#" class="editdoc" data-def="{{id}}"><span class="icon-pencil r"></span></a>
+				{{/authenticated}}
+			</h3>
+
+			<div class="routedoc" id="docid{{id}}" data-id="{{id}}">
+				<div class="display" id="docdata{{id}}">{{{docdata}}}</div>
+				{{#authenticated}}
+				<div class="editor pb" style="display:none">
+					<input id="docidnameeditor{{id}}" value="{{name}}" class="hmt hmb" style="width:100%"><br>
+					<textarea id="docideditor{{id}}">{{{docdataraw}}}</textarea>
+					<button class="savedocbutton green" data-def="{{id}}">Save</button>
+					<button class="canceldocbutton red" data-def="{{id}}">Cancel</button>
+				</div>
+				{{/authenticated}}
+			</div>
+
+		</div>
+	</div>
+	<div class="col last six rightcodecol" style="min-height: 500px;">
+		<h5>Route usage:
+			{{#authenticated}}
+			<a href="#" class="editusagedoc" data-def="{{id}}"><span class="icon-pencil r"></span></a>
+			{{/authenticated}}
+		</h5>
+		<div class="routeusage" id="routeusage{{id}}" data-id="{{id}}">
+			<div class="display" id="docdatausage{{id}}">{{{usagedata}}}</div>
+			{{#authenticated}}
+				<div class="editor pb" style="display:none">
+				<textarea id="docidusageeditor{{id}}">{{{usagedataraw}}}</textarea>
+				<button class="saveusagebutton green" data-def="{{id}}">Save</button>
+				<button class="cancelusagebutton red" data-def="{{id}}">Cancel</button>
+				</div>
+			{{/authenticated}}
+		</div>
+	</div>
+</div>
+{{/docs}}
+{{/groups}}

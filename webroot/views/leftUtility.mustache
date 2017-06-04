@@ -1,0 +1,21 @@
+<div id="leftMenu" class="col push_four twelve first">
+
+<img id="logo" src="{{configLogo}}" srcset="{{configLogoSrcSet}}" align="" class="swg" width="176" height="58" alt="">
+<h1 id="h1title">{{configTitle}}</h1>
+
+
+{{#authenticated}}
+<p class="dmt"><a href="/"><span class="icon-plus"></span> Return to API</a></p>
+
+<p class="dmt"><a href="/users"><span class="icon-users"></span> Users</a></p>
+<p class="dmt"><a href="/config"><span class="icon-pencil"></span> Configuration</a></p>
+<p class="dmt"><a href="/logout"><span class="icon-warning"></span> Logout</a></p>
+{{/authenticated}}
+
+
+{{^authenticated}}
+<p class="dmt"><a href="/login"><span class="icon-warning"></span> Login</a></p>
+{{/authenticated}}
+
+&nbsp;
+</div>

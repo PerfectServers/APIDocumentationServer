@@ -1,0 +1,8 @@
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
+log.log
+Package.pins
+StORMlog.txt
+ApplicationConfiguration.json

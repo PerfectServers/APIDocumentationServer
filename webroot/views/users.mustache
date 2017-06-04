@@ -1,0 +1,20 @@
+{{>header}}
+	<div class="row">
+		<div class="col four first leftcol f l t">{{>leftUtility}}</div>
+		<div class="col push_four twelve last rightcol">
+
+{{^authenticated}}
+{{>components/login}}
+{{/authenticated}}
+
+{{#authenticated}}
+
+
+{{#userlist?}}{{>components/users}}{{/userlist?}}
+{{#usermod?}}{{>components/usermod}}{{/usermod?}}
+
+{{/authenticated}}
+
+		</div>
+	</div>
+{{>footer}}

@@ -1,0 +1,18 @@
+{
+	"postgresdbname": "apidocdb",
+	"postgreshost": "localhost",
+	"postgresport": 5432,
+	"postgrespwd": "perfect",
+	"postgresuser": "perfect",
+	"httpport": 8181,
+	
+	"mailserver": "smtp://...",
+	"mailuser": "...",
+	"mailpass": "...",
+	"mailfromaddress": "user@example.com",
+	"mailfromname": "My Name",
+	
+	"baseURL": "http://localhost:8181"
+
+	
+}
