@@ -39,6 +39,14 @@ func mainMonitorRoutes() -> [[String: Any]] {
 
 	// Groups
 	routes.append(["method":"post", "uri":"/api/v1/groups/create", "handler":WebHandlers.groupCreate])
+	// web routes
+	routes.append(["method":"get", "uri":"/groups", "handler":WebHandlers.groupList])
+	routes.append(["method":"get", "uri":"/groups/create", "handler":WebHandlers.groupMod])
+	routes.append(["method":"get", "uri":"/groups/{id}/edit", "handler":WebHandlers.groupMod])
+	routes.append(["method":"post", "uri":"/groups/create", "handler":WebHandlers.groupModAction])
+	routes.append(["method":"post", "uri":"/groups/{id}/edit", "handler":WebHandlers.groupModAction])
+	routes.append(["method":"delete", "uri":"/groups/{id}/delete", "handler":WebHandlers.groupDelete])
+
 
 	// Docs
 	routes.append(["method":"post", "uri":"/api/v1/docs/create", "handler":WebHandlers.docCreate])
