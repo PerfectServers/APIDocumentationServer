@@ -1,0 +1,49 @@
+<h2>Groups</h2>
+	<h3 class="mt">{{action}} Group</h3>
+
+	{{msg}}
+
+	<form action="?" method="POST" id="groupform">
+		<input type="hidden" name="_csrf" value="{{csrfToken}}">
+		<div class="row">
+
+			<div class="col six first">
+				<div class="row">
+					<label class="mt hmb">Group Name:</label>
+					<div class="col thirteen first">
+						<input type="text" name="name" class="hpl" value="{{name}}" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<label class="mt hmb">Display Order:</label>
+					<div class="col thirteen first">
+						<input type="text" name="displayorder" class="hpl" value="{{displayorder}}" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<label class="mt hmb">Status:</label>
+					<div class="col thirteen first">
+						<select name="status" class="hpl">
+							<option value="active"{{objectactive}}>Active</option>
+							<option value="inactive"{{objectinactive}}>Inactive</option>
+						</select>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<button type="submit" class="dmt">Save</button>
+		<a href="/groups" class="button">Cancel</a>
+	</form>
+
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+
+<script>
+$("#groupform").validate();
+</script>
+
+
+
