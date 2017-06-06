@@ -122,7 +122,7 @@ public class APIGroup: PostgresStORM {
 	public func getDocs() -> [APIDoc] {
 		let d = APIDoc()
 		do {
-			try d.select(whereclause: "groupid = $1", params: [id], orderby: ["groupid"])
+			try d.select(whereclause: "groupid = $1", params: [id], orderby: ["displayorder"])
 		} catch {
 			print("doc group get error: \(error)")
 		}
