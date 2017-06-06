@@ -1,0 +1,21 @@
+{{>header}}
+<div class="row">
+<div class="col four first leftcol f l t">{{>leftUtility}}</div>
+<div class="col push_four twelve last rightcol">
+
+{{^authenticated}}
+{{>components/login}}
+{{/authenticated}}
+
+{{#authenticated}}
+
+
+{{#grouplist?}}{{>components/groups}}{{/grouplist?}}
+{{#groupmod?}}{{>components/groupmod}}{{/groupmod?}}
+
+{{/authenticated}}
+
+</div>
+</div>
+{{>footer}}
+
