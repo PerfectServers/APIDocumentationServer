@@ -1,0 +1,32 @@
+<h2>Groups</h2>
+
+{{msg}}
+
+<table class="amp">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Doc Count</th>
+			<th>Status</th>
+			<th>&nbsp;</th>
+		</tr>
+	<thead>
+
+	<tbody>
+	{{#groups}}
+		<tr>
+			<td>{{name}}</td>
+			<td>{{doccount}}</td>
+			<td>{{status}}</td>
+			<td class="largericons">
+				<a href="/groups/{{id}}/edit"><span class="icon-pencil"></span></a>
+				<a href="/groups/{{id}}/delete" class="deleteaction" dest="/groups"><span class="icon-trash"></span></a>
+			</td>
+		</tr>
+	{{/groups}}
+	<tbody>
+
+</table>
+
+<a href="/groups/create" class="button">Create Group</a>
+
