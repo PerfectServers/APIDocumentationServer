@@ -9,6 +9,7 @@
 import SwiftMoment
 import PerfectHTTP
 import PerfectMarkdown
+import SwiftString
 
 
 extension WebHandlers {
@@ -78,10 +79,16 @@ extension WebHandlers {
 
 					if let id = bodyData["id"], !(id as? String ?? "").isEmpty,
 						let usage = bodyData["usage"] {
+						var u = usage as? String ?? ""
 
 						try obj.get(id)
 
-						obj.detail["usage"] = usage as? String ?? ""
+						// fix for missing \n
+						if !u.endsWith("\n"), !u.isEmpty {
+							u += "\n"
+						}
+
+						obj.detail["usage"] = u
 
 						try? obj.save()
 						msg = "complete"
