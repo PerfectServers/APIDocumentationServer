@@ -128,5 +128,31 @@ public class APIGroup: PostgresStORM {
 		}
 		return d.rows()
 	}
+
+
+	public static func listGroups() -> [[String: Any]] {
+		var obj = [[String: Any]]()
+		let t = APIGroup()
+		let cursor = StORMCursor(limit: 9999999,offset: 0)
+		try? t.select(
+			columns: [],
+			whereclause: "true",
+			params: [],
+			orderby: ["displayorder"],
+			cursor: cursor
+		)
+
+
+		for row in t.rows() {
+			var r = [String: Any]()
+			r["id"] = row.id
+			r["name"] = row.name
+			r["displayorder"] = row.displayOrder
+			if row.objectStatus == 1 { r["status"] = true } else { r["status"] = false }
+			r["doccount"] = row._docs.count
+			obj.append(r)
+		}
+		return obj
+	}
 }
 
